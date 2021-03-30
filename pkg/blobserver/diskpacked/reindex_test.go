@@ -17,6 +17,7 @@ limitations under the License.
 package diskpacked
 
 import (
+	"context"
 	"testing"
 
 	"perkeep.org/pkg/blob"
@@ -52,7 +53,7 @@ func TestWalkPack(t *testing.T) {
 		return nil
 	}
 
-	if err := s.Walk(nil, walk); err != nil {
+	if err := s.Walk(context.TODO(), walk); err != nil {
 		t.Fatal(err)
 	}
 
